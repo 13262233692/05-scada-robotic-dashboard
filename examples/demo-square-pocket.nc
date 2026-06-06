@@ -1,0 +1,60 @@
+%
+O0001 (Demo Program - Square Pocket with Circular Islands)
+(Automotive Bracket Milling)
+G90 G94 G17 G21 G40 G49 G80
+G54
+S3500 M03
+G00 Z50.0
+G00 X-10.0 Y-10.0
+
+(Roughing Pass - Outer Profile)
+G00 Z5.0
+G01 Z-3.0 F200
+G01 X70.0 F250
+G01 Y70.0
+G01 X-10.0
+G01 Y-10.0
+G00 Z5.0
+
+(First Circular Pocket - CW)
+G00 X25.0 Y25.0
+G01 Z-2.0 F150
+G02 X25.0 Y25.0 I15.0 J0 F200
+G00 Z5.0
+
+(Second Circular Pocket - CCW)
+G00 X55.0 Y25.0
+G01 Z-2.5 F150
+G03 X55.0 Y25.0 I15.0 J0 F180
+G00 Z5.0
+
+(Third Circle at bottom)
+G00 X40.0 Y55.0
+G01 Z-1.5 F120
+G02 X40.0 Y55.0 I12.0 J0 F160
+G00 Z5.0
+
+(Fine Finishing Pass)
+G00 X0.0 Y0.0
+G01 Z-3.0 F100
+G01 X60.0 F300
+G03 X80.0 Y20.0 I0 J20.0 F250
+G01 Y50.0
+G02 X60.0 Y70.0 I-20.0 J0
+G01 X0.0
+G01 Y0.0
+G00 Z5.0
+
+(Drill Pattern - 4 Holes)
+G00 X15.0 Y15.0
+G81 Z-5.0 R2.0 F80
+X45.0
+X45.0 Y45.0
+X15.0
+G80
+
+G00 Z50.0
+G00 X0.0 Y0.0
+M05
+M30
+%

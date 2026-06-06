@@ -1,0 +1,29 @@
+export const PROTOCOL = {
+  FRAME_HEADER: 0xAA55,
+  FRAME_FOOTER: 0x55AA,
+  FRAME_LENGTH: 88,
+  JOINT_COUNT: 6,
+  
+  OFFSETS: {
+    HEADER: 0,
+    ARM_ID: 2,
+    FRAME_LEN: 4,
+    TIMESTAMP_HIGH: 6,
+    TIMESTAMP_LOW: 8,
+    JOINT_ANGLES: 10,
+    JOINT_TEMPS: 34,
+    JOINT_TORQUES: 58,
+    STATUS_WORD: 82,
+    CRC: 84,
+    FOOTER: 86,
+  },
+  
+  STATUS_BITS: {
+    RUNNING: 0,
+    ERROR: 1,
+    WARNING: 2,
+    MAINTENANCE: 3,
+    EMERGENCY_STOP: 4,
+    AUTO_MODE: 5,
+  },
+};

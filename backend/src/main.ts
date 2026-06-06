@@ -1,0 +1,16 @@
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+  
+  app.enableCors({
+    origin: '*',
+    credentials: true,
+  });
+  
+  await app.listen(3000);
+  console.log('SCADA Backend running on http://localhost:3000');
+  console.log('WebSocket Gateway ready on ws://localhost:3000');
+}
+bootstrap();
